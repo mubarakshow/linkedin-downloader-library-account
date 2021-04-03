@@ -1,9 +1,17 @@
 # LinkedIn Learning Courses Downloader
 A library and CLI to download LinkedIn learning courses using your LinkedIn Premium account
 
-## How to use
+## Disclaimer & Credits
+This is a fork from the [original downloader](https://github.com/lawrensylvan/linkedin-learning-courses-downloader) so all credits go to the creator of this tool. 
 
-- You need a valid and active LinkedIn Premium subscription
+## How is this different?
+- LinkedIn Learning UX and login process is different for **Library Accounts**
+- So, using the [original downloader](https://github.com/lawrensylvan/linkedin-learning-courses-downloader) won't work
+- This repo is a patch/fix for that.
+- It also uses environment variables (`.env`) to keep your crendials secure
+
+## How to use
+- You need a valid and active LinkedIn Premium Library subscription
 - You need to have Node.js installed
 
 ### Download dependencies
@@ -13,23 +21,22 @@ Go to the project directory using terminal & run
 ```sh
 npm install
 ```
+### Environemt Variables (env)
+- Create a `.env` file in your root direcotry
+- Copy the items of `.env.example` file to the newly created `.env` file.
+- Fill in your credentials in your `.env` file.
 
-### Create a params.json file
-
-```json
-{
-    "user": "your@email.com",
-    "password": "yourpassword",
-    "items": [
-        "react-essential-training",
-        "path/become-a-mern-stack-javascript-developer",
-        "https://www.linkedin.com/learning/me/saved"
-    ],
-    "outputFolder": "./courses"
-}
+### Configure params.js
+```js
+const securedParams = {
+  user: process.env.LIBRARY_ID,
+  password: process.env.LIBRARY_PASSWORD,
+  items: [
+    "postgresql-essential-training", // add the courses you want to download here
+  ],
+  outputFolder: "./courses",
+};
 ```
-
-- Fill in your credentials
 - Provide an array of items you wish to download. Each item is the URL (full or just last part) of either :
 
   - An **individual course** : `https://www.linkedin.com/learning/final-cut-pro-x-10-4-4-essential-training`
