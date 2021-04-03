@@ -1,7 +1,6 @@
-const linkedInLearningDownloader = require('./downloader.js')
+const linkedInLearningDownloader = require("./downloader.js");
 
-const fs = require('fs')
-const params = JSON.parse(fs.readFileSync('./params.json'))
+const securedParams = require("./params");
 
-const downloader = linkedInLearningDownloader()
-downloader.downloadCourses(params)
+const downloader = linkedInLearningDownloader();
+downloader.downloadCourses(securedParams);
