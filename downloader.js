@@ -64,18 +64,6 @@ const LinkedInLearningDownloader = () => {
         page.click("#library-validate-button"),
         page.waitForNavigation(),
       ]);
-
-    // Individual Account Login   
-      // await page.type('#auth-id-input', user)
-      // await Promise.all([
-      //     page.click('#auth-id-button'),
-      //     page.waitForNavigation()
-      // ])
-      // await page.type('#password', password)
-      // await Promise.all([
-      //     page.click('.login__form_action_container button'),
-      //     page.waitForNavigation()
-      // ])
     } catch (err) {
       console.error(`Unexpected error while logging in : ${err}`);
       throw err;
