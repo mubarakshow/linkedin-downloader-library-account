@@ -25,6 +25,7 @@
   "homepage": "https://github.com/lawrensylvan/linkedin-learning-courses-downloader#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "lodash": "^4.17.19",
     "puppeteer": "^2.1.1",
     "unescape": "^1.0.1"
